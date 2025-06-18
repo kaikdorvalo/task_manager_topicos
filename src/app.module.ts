@@ -7,6 +7,7 @@ import 'dotenv/config'
 import { AuthModule } from './modules/auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './modules/auth/application/guards/auth.guard';
+import { TaskMoule } from './modules/task/task.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AuthGuard } from './modules/auth/application/guards/auth.guard';
     }),
     AuthModule,
     UserModule,
+    TaskMoule,
   ],
   controllers: [AppController],
   providers: [

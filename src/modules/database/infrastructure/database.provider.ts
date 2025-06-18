@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import "dotenv/config";
 import { UserEntity } from "src/modules/user/application/entities/user.entity";
+import { TaskEntity } from "src/modules/task/application/entities/task.entity";
 
 export const databaseProviders = [
     {
@@ -16,6 +17,7 @@ export const databaseProviders = [
                 schema: process.env.DATABASE_SCHEMA,
                 entities: [
                     UserEntity,
+                    TaskEntity,
                 ],
                 synchronize: true,
             });
