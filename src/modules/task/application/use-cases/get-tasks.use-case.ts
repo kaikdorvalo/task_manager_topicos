@@ -11,7 +11,7 @@ export class getTasksUseCase {
 
     async execute(user: UserEntity) {
         console.log(user)
-        const result = await this.taskRepository.find({ where: { user: user } })
+        const result = await this.taskRepository.find({})
         return new ResponseObject(HttpStatus.OK, { data: result })
     }
 }

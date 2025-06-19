@@ -4,7 +4,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 @Entity()
 export class TaskEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: number
+    id: string
 
     @Column()
     name: string
@@ -12,8 +12,7 @@ export class TaskEntity {
     @Column()
     completed: boolean
 
-    @ManyToOne(() => UserEntity)
-    @JoinColumn()
+    @ManyToOne(() => UserEntity, userEntity => userEntity.task)
     user: UserEntity
 
     @Column({ default: new Date() })
